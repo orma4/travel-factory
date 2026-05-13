@@ -42,7 +42,8 @@
           <div class="col-12">
             <div v-if="error" class="alert alert-danger py-2">{{ error }}</div>
             <button type="submit" class="btn btn-primary" :disabled="submitting">
-              <span v-if="submitting" class="spinner-border spinner-border-sm me-1"></span>
+              <span v-if="submitting" class="spinner-border spinner-border-sm me-2"></span>
+              <i v-else class="bi bi-send-fill me-2"></i>
               Submit Request
             </button>
           </div>

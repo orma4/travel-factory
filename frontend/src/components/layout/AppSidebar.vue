@@ -1,13 +1,21 @@
 <template>
   <aside class="app-sidebar d-flex flex-column">
-    <div class="sidebar-brand-section">
-      <small class="text-uppercase" style="color: #6c7a89; letter-spacing: 0.1em; font-size: 0.7rem; font-weight: 600">
-        Navigation
-      </small>
+    <div class="sidebar-profile">
+      <div class="sidebar-avatar">
+        {{ initials }}
+      </div>
+      <div class="sidebar-profile-info">
+        <div class="sidebar-profile-name">{{ activeUser?.name }}</div>
+        <div class="sidebar-profile-role">{{ activeUser?.role }}</div>
+      </div>
+    </div>
+
+    <div class="sidebar-section-title">
+      Navigation
     </div>
 
     <nav class="flex-grow-1">
-      <ul class="nav flex-column mt-2">
+      <ul class="nav flex-column">
         <li v-if="activeUser?.role === 'requester'" class="nav-item">
           <RouterLink to="/requester" class="nav-link" active-class="active">
             <i class="bi bi-send"></i>My Requests
@@ -20,13 +28,6 @@
         </li>
       </ul>
     </nav>
-
-    <div class="px-3 py-3" style="border-top: 1px solid rgba(255,255,255,0.05)">
-      <small style="color: #6c7a89; font-size: 0.7rem">
-        <i class="bi bi-person-circle me-1"></i>
-        {{ activeUser?.name }}
-      </small>
-    </div>
   </aside>
 </template>
 
@@ -36,4 +37,14 @@ import { useUserStore } from '../../stores/userStore'
 
 const store = useUserStore()
 const activeUser = computed(() => store.activeUser)
+
+const initials = computed(() => {
+  const name = activeUser.value?.name ?? ''
+  return name
+    .split(' ')
+    .map((part) => part.charAt(0))
+    .join('')
+    .slice(0, 2)
+    .toUpperCase()
+})
 </script>
