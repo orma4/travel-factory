@@ -18,7 +18,7 @@
               <th>Duration</th>
               <th>Reason</th>
               <th>Status</th>
-              <th>Comments</th>
+              <th>Manager Note</th>
             </tr>
           </thead>
           <tbody>
