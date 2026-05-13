@@ -25,16 +25,14 @@ A full-stack vacation request management application with two role-based interfa
 
 ## Setup
 
-### 1. Clone and install dependencies
+### 1. Install dependencies
+
+From the project root, install dependencies for the root, backend, and frontend:
 
 ```bash
-# Backend
-cd backend
 npm install
-
-# Frontend
-cd ../frontend
-npm install
+npm install --prefix backend
+npm install --prefix frontend
 ```
 
 ### 2. Configure the database
@@ -65,8 +63,7 @@ CREATE DATABASE vacation_management;
 ### 3. Seed the database
 
 ```bash
-cd backend
-npm run seed
+npm run seed --prefix backend
 ```
 
 This creates:
@@ -79,21 +76,15 @@ This creates:
 
 ## Running the Application
 
-Open two terminal windows:
+From the project root, start both backend and frontend with a single command:
 
-**Terminal 1 — Backend:**
 ```bash
-cd backend
 npm run dev
-# → http://localhost:3000
 ```
 
-**Terminal 2 — Frontend:**
-```bash
-cd frontend
-npm run dev
-# → http://localhost:5173
-```
+This uses `concurrently` to launch:
+- Backend on [http://localhost:3000](http://localhost:3000)
+- Frontend on [http://localhost:5173](http://localhost:5173)
 
 Open [http://localhost:5173](http://localhost:5173) in your browser.
 
@@ -111,8 +102,7 @@ Use the **user switcher dropdown** in the top navbar to switch between users. Th
 ## Running Tests
 
 ```bash
-cd backend
-npm test
+npm test --prefix backend
 ```
 
 Unit tests cover `VacationRequestService` business logic (status transitions, validation enforcement). Integration tests cover the POST and PATCH API endpoints against a real database connection.
