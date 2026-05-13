@@ -1,17 +1,16 @@
 <template>
-  <nav class="app-navbar d-flex align-items-center px-4 shadow-sm">
-    <span class="fw-bold text-dark me-auto" style="font-size: 1.1rem">
-      <i class="bi bi-calendar2-check me-2 text-success"></i>Vacation Manager
+  <nav class="app-navbar d-flex align-items-center px-4">
+    <span class="navbar-brand-title me-auto">
+      <i class="bi bi-calendar2-check me-2"></i>Vacation Manager
     </span>
 
     <div class="d-flex align-items-center gap-3">
-      <span class="badge rounded-pill" :class="roleBadgeClass">
+      <span class="role-pill" :class="activeUser?.role">
         {{ activeUser?.role }}
       </span>
 
       <select
-        class="form-select form-select-sm"
-        style="width: auto"
+        class="user-switcher"
         :value="activeUser?.id"
         @change="onUserChange"
       >
@@ -33,10 +32,6 @@ const router = useRouter()
 
 const users = computed(() => store.users)
 const activeUser = computed(() => store.activeUser)
-
-const roleBadgeClass = computed(() =>
-  activeUser.value?.role === 'validator' ? 'bg-primary' : 'bg-success'
-)
 
 function onUserChange(event: Event) {
   const id = Number((event.target as HTMLSelectElement).value)

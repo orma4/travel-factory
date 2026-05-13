@@ -1,10 +1,12 @@
 <template>
   <div class="card">
     <div class="card-header d-flex justify-content-between align-items-center">
-      My Requests
-      <span class="badge bg-secondary">{{ requests.length }}</span>
+      <span><i class="bi bi-list-ul me-2"></i>My Requests</span>
+      <span class="badge bg-light text-dark" style="font-weight: 600; border: 1px solid var(--color-border);">
+        {{ requests.length }} total
+      </span>
     </div>
-    <div class="card-body p-0">
+    <div class="card-body no-padding">
       <LoadingSpinner v-if="loading" />
       <EmptyState v-else-if="requests.length === 0" message="You have no vacation requests yet." />
       <div v-else class="table-responsive">

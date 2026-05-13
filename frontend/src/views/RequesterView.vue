@@ -1,6 +1,7 @@
 <template>
   <AppLayout>
-    <h4 class="mb-4">My Vacation Requests</h4>
+    <h1 class="page-title">My Vacation Requests</h1>
+    <p class="page-subtitle">Submit a new request and track the status of your previous requests.</p>
     <RequestForm />
     <RequestList />
   </AppLayout>

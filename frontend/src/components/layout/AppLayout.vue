@@ -3,7 +3,7 @@
     <AppNavbar />
     <div class="d-flex flex-grow-1">
       <AppSidebar />
-      <main class="flex-grow-1 p-4">
+      <main class="flex-grow-1 app-main">
         <slot />
       </main>
     </div>

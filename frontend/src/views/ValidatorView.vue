@@ -1,6 +1,7 @@
 <template>
   <AppLayout>
-    <h4 class="mb-4">Vacation Request Dashboard</h4>
+    <h1 class="page-title">Vacation Request Dashboard</h1>
+    <p class="page-subtitle">Review pending requests and manage employee vacation approvals.</p>
     <RequestDashboard />
   </AppLayout>
 </template>

@@ -1,6 +1,8 @@
 <template>
   <div class="card mb-4">
-    <div class="card-header">New Vacation Request</div>
+    <div class="card-header">
+      <i class="bi bi-plus-circle me-2"></i>New Vacation Request
+    </div>
     <div class="card-body">
       <form @submit.prevent="submit">
         <div class="row g-3">

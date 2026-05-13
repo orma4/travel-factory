@@ -1,8 +1,10 @@
 <template>
   <div class="card">
     <div class="card-header d-flex justify-content-between align-items-center">
-      Vacation Requests
-      <span class="badge bg-secondary">{{ filtered.length }}</span>
+      <span><i class="bi bi-clipboard-data me-2"></i>Vacation Requests</span>
+      <span class="badge bg-light text-dark" style="font-weight: 600; border: 1px solid var(--color-border);">
+        {{ filtered.length }} shown
+      </span>
     </div>
     <div class="card-body">
       <StatusFilter v-model="activeFilter" />
