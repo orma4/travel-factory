@@ -1,4 +1,6 @@
 <template>
+  <StatsCards @select="activeFilter = $event" />
+
   <div class="card">
     <div class="card-header d-flex justify-content-between align-items-center">
       <span><i class="bi bi-clipboard-data me-2"></i>Vacation Requests</span>
@@ -54,6 +56,7 @@ import LoadingSpinner from '../common/LoadingSpinner.vue'
 import EmptyState from '../common/EmptyState.vue'
 import StatusFilter from './StatusFilter.vue'
 import ActionButtons from './ActionButtons.vue'
+import StatsCards from './StatsCards.vue'
 
 const store = useRequestStore()
 const loading = computed(() => store.loading)

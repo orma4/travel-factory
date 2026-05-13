@@ -445,6 +445,81 @@ textarea.form-control {
   color: var(--color-primary) !important;
 }
 
+/* ===== Stat cards ===== */
+.stat-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px 22px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: var(--transition);
+  border-left: 4px solid transparent;
+  cursor: pointer;
+}
+
+.stat-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.stat-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.stat-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #8898aa;
+}
+
+.stat-value {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #2f4050;
+  line-height: 1.1;
+  margin-top: 2px;
+}
+
+.stat-pending {
+  border-left-color: #f8ac59;
+}
+.stat-pending .stat-icon {
+  background: rgba(248, 172, 89, 0.15);
+  color: #b07320;
+}
+
+.stat-approved {
+  border-left-color: var(--color-primary);
+}
+.stat-approved .stat-icon {
+  background: rgba(26, 179, 148, 0.15);
+  color: var(--color-primary-dark);
+}
+
+.stat-rejected {
+  border-left-color: #ed5565;
+}
+.stat-rejected .stat-icon {
+  background: rgba(237, 85, 101, 0.15);
+  color: #c93847;
+}
+
 /* ===== Empty state ===== */
 .empty-state-icon {
   color: #d1d5db;
