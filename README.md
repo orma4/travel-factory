@@ -140,6 +140,21 @@ Base URL: `http://localhost:3000/api`
 
 ---
 
+## Bonus Features
+
+Beyond the core requirements:
+
+- **Dashboard stats cards** — clickable Pending / Approved / Rejected tiles at the top of the validator dashboard. Click a tile to filter the table to that status.
+- **Role-based router guards** — navigating to the wrong role's route automatically redirects to the correct one.
+- **Duration column** — auto-computes vacation length in days from the start/end dates.
+- **Conflict detection** — the API returns `409 Conflict` if someone tries to update a request that has already been processed.
+- **Sidebar profile card** — shows the active user's initials, name, and role at the top of the sidebar.
+- **Single-command dev workflow** — `npm run dev` from the project root launches both backend and frontend together via `concurrently`.
+- **Manager Note column** — on the requester view, the comments column is renamed to "Manager Note" so it's clear it's feedback from the validator, not something the requester fills in.
+- **Idempotent seed script** — `npm run seed` can be run multiple times safely without duplicating data.
+
+---
+
 ## Known Limitations
 
 - No real authentication — the user switcher is for demo purposes only
