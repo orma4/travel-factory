@@ -1,0 +1,103 @@
+:root {
+  --color-primary: #1ab394;
+  --color-sidebar-bg: #2f4050;
+  --color-sidebar-text: #a7b1c2;
+  --color-sidebar-active: #fff;
+  --color-navbar-bg: #fff;
+  --color-body-bg: #f3f3f4;
+}
+
+body {
+  background-color: var(--color-body-bg);
+  font-family: 'open sans', Helvetica, Arial, sans-serif;
+}
+
+/* Sidebar */
+.app-sidebar {
+  width: 220px;
+  min-height: 100vh;
+  background-color: var(--color-sidebar-bg);
+  flex-shrink: 0;
+}
+
+.app-sidebar .nav-link {
+  color: var(--color-sidebar-text);
+  border-radius: 0;
+  padding: 14px 20px;
+  font-size: 0.875rem;
+}
+
+.app-sidebar .nav-link:hover,
+.app-sidebar .nav-link.active {
+  color: var(--color-sidebar-active);
+  background-color: rgba(255, 255, 255, 0.08);
+  border-left: 3px solid var(--color-primary);
+}
+
+/* Navbar */
+.app-navbar {
+  background-color: var(--color-navbar-bg);
+  border-bottom: 1px solid #e7eaec;
+  height: 60px;
+}
+
+/* Cards */
+.card {
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.card-header {
+  background-color: #fff;
+  border-bottom: 1px solid #e7eaec;
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #676a6c;
+}
+
+/* Status badges */
+.badge-pending {
+  background-color: #f8ac59;
+  color: #fff;
+}
+
+.badge-approved {
+  background-color: #1ab394;
+  color: #fff;
+}
+
+.badge-rejected {
+  background-color: #ed5565;
+  color: #fff;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.btn-primary:hover {
+  background-color: #18a689;
+  border-color: #18a689;
+}
+
+/* Table */
+.table thead th {
+  border-top: none;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #676a6c;
+  background-color: #f9f9f9;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .app-sidebar {
+    display: none;
+  }
+}
